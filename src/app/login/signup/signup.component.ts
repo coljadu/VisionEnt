@@ -16,10 +16,10 @@ export class SignupComponent implements OnInit {
   }
 
   registerUser() {
-    this.http.post('/book', this.user)
+    this.http.post('/user/signup', this.user)
       .subscribe(res => {
-          let id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+        console.log(res);
+          this.router.navigate(['/books']);
         }, (err) => {
           console.log(err);
         }
